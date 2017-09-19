@@ -6,6 +6,8 @@ var bodyParser = require('body-parser');
 var app=express();
 var mongoose = require('mongoose');
 
+Airport = require('./models/airport.js');
+
 //mongoose connect
 mongoose.connect(localconfig.connection_url);
 var db = mongoose.connection;
