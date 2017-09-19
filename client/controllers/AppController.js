@@ -5,7 +5,7 @@ myApp.controller('AppController', ['$scope', '$http', function($scope, $http){
     
     $scope.getAirports = function(){
         $http.get('/api/airports').success(function(response){
-            $scope.airports = response;
+            $scope.airport = response;
         });
     }
 }]);
