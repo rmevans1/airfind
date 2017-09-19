@@ -101,8 +101,16 @@
                 </div>
             </form>
         </div>
-        <div class="row">
-            
+        <div class="row" ng-init="getAirports()">
+            <div class="col-md-12">
+                <div class="well" ng-repeat="airport in airports['data']">
+                    <h4>{{airport.name}}</h4>
+                    <ul>
+                        <li><strong>Type: </strong>{{airport.type}}</li>
+                        <li><strong>Code: </strong>{{airport.code}}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div><!-- /.container -->
      <script src="/bower_components/jquery/dist/jquery.js"></script>
