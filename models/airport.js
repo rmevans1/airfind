@@ -26,5 +26,5 @@ var Airport = module.exports = mongoose.model('Airport', airportSchema);
 
 //Get Airpots
 module.exports.getAirports = function(callback, limit){
-    Airport.findOne(id, callback);
+    Airport.find(callback);
 }
