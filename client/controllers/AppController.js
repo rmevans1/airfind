@@ -23,8 +23,8 @@ myApp.controller('AppController', ['$scope', '$http', function($scope, $http){
         }
         //had to change .success to .then .success no longer supported
         $http.get('/geocode/location?address='+$scope.location.address).then(function(loc_response){
-            location.lat = loc_response.locations[0].latitude
-            location.llon = loc_response.locations[0].longitude
+            location.lat = loc_response.data.locations[0].latitude
+            location.lon = loc_response.data.locations[0].longitude
             
             $http.post('/api/airports/prox', location).then(function(response){
                 $scope.airports = response;
