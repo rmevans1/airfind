@@ -35,6 +35,16 @@ app.get('/api/airports', function(req, res){
     });
 });
 
+app.post('/api/airports/prox', function(req, res){
+    var location = req.body;
+    Airport.getAirportByProximity(location, function(err, docs){
+        if(err){
+            res.send(err);
+        }
+        res.json(docs);
+    })
+})
+
 app.get('/api/states', function(req, res){
     State.getStates(function(err, docs){
         if(err){
