@@ -67,6 +67,7 @@ module.exports.getAirportByProximity = function(location, callback, limit){
     },
     {
         name: 1,
+        type: 1,
         code: 1,
         _id: 0
     }, callback).limit(limit);
