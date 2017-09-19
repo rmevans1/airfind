@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 
 Airport = require('./models/airport.js');
 
-app.use(express_geocode_api({
+app.use(express_geocoding_api({
     geocoder: {
         provider: 'google'
     }
@@ -23,6 +23,15 @@ app.use(bodyParser.json());
 
 app.get('/', function(req, res){
     res.send('Please use /api/airports or /api/states endpoints');
+});
+
+app.get('/api/airports', function(req, res){
+    Airport.getAirports(function(err, docs){
+        if(err){
+            res.send(err);
+        }
+        res.json(docs);
+    });
 });
 
 app.listen(3000);
