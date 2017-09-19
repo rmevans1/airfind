@@ -44,5 +44,14 @@ app.get('/api/states', function(req, res){
     });
 });
 
+app.get('/api/airports/state/:state', function(req, res){
+    Airport.getAirportByState(req.params.state, function(err, docs){
+        if(err){
+            res.send(err);
+        }
+        res.json(docs);
+    });
+});
+
 app.listen(3000);
 console.log('App started on port 3000');
