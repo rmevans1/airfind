@@ -22,7 +22,7 @@ var db = mongoose.connection;
 app.use(express.static(__dirname+'/client'));
 app.use(bodyParser.json());
 
-app.get('/', function(req, res){
+app.get('/api', function(req, res){
     res.send('Please use /api/airports or /api/states endpoints');
 });
 
