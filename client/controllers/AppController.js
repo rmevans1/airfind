@@ -9,4 +9,11 @@ myApp.controller('AppController', ['$scope', '$http', function($scope, $http){
             $scope.airports = response;
         });
     }
+    
+    $scope.findAirports = function(){
+        //had to change .success to .then .success no longer supported
+        $http.get('/api/airports/state/'+$scope.stateCode).then(function(response){
+            $scope.airports = response;
+        });
+    }
 }]);
