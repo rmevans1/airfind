@@ -8,6 +8,12 @@ var mongoose = require('mongoose');
 
 Airport = require('./models/airport.js');
 
+app.use(express_geocode_api({
+    geocoder: {
+        provider: 'google'
+    }
+}));
+
 //mongoose connect
 mongoose.connect(localconfig.connection_url);
 var db = mongoose.connection;
